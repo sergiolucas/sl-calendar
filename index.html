@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendario de Eventos</title>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        Calendario de Eventos
+      </div>
+      <div class="date-picker">
+        <div class="datepicker-container" id="datepicker"></div>
+        <div class="selected-date" id="selectedDate"></div>
+      </div>
+      <div class="user-filter">
+        <h3>Filtrar usuarios</h3>
+        <div id="userCheckboxes"></div>
+      </div>
+    </div>
+    
+    <div class="calendar-container">
+      <div class="user-column" id="userColumn"></div>
+      <div class="calendar-content">
+        <div class="hours-row" id="hoursRow"></div>
+        <div class="user-rows" id="userRows"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <button id="saveBtn">💾 Guardar cambios</button>
+  </div>
+  
+  <div id="tooltip" class="tooltip"></div>
+  <script src="script.js"></script>
+</body>
+</html>
