@@ -166,7 +166,8 @@ body {
 
 .calendar-content {
   flex: 1;
-  overflow: auto;
+  overflow-y: auto; /* Volvemos a overflow-y para la dirección vertical principal */
+  overflow-x: auto; /* Mantenemos el desplazamiento horizontal por si el contenido es muy ancho */
   position: relative;
   background: #fff;
 }
@@ -179,10 +180,11 @@ body {
   z-index: 10;
   border-bottom: 1px solid #e1e4e8;
   height: 50px;
+  width: fit-content; /* Ajustar ancho al contenido */
 }
 
 .hour-cell {
-  min-width: 100px; /* Use min-width instead of fixed width */
+  width: 100px; /* Ancho fijo */
   height: 100%;
   text-align: center;
   border-left: 1px solid #e1e4e8;
@@ -194,9 +196,15 @@ body {
   color: #666;
 }
 
+/* Añadimos un borde derecho al último hour-cell para completar la línea */
+.hours-row .hour-cell:last-child {
+  border-right: 1px solid #e1e4e8;
+}
+
 .user-rows {
   display: flex;
   flex-direction: column;
+  width: fit-content; /* Ajustar ancho al contenido */
 }
 
 .user-row {
@@ -207,10 +215,7 @@ body {
   align-items: center;
   background: #fff;
   transition: background 0.2s;
-}
-
-.user-row:hover {
-  background: #f9fafc;
+  width: fit-content; /* Ajustar ancho al contenido */
 }
 
 .event {
